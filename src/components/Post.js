@@ -6,8 +6,8 @@ render(){
 
   return(
     <div className='post'>
-      <a className='url' href={this.props.url}><img className='image'>{this.props.img}</img></a>
-      <a className='url' href={this.props.url}><div className='title'>{this.props.title}</div></a>
+      <a className='url' href={this.props.url}><img className='image'>{this.props.img}</img>
+      <div className='title'>{this.props.title}</div></a>
     </div>
   );
 }
