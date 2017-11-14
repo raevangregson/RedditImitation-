@@ -6,8 +6,8 @@ import GridPost from './GridPost';
 class GridPosts extends Component{
 
   render(){
-    const allPosts = this.props.data.map((post,index) =>(
-      <GridPost key={post.title} post={post}/>
+    const allPosts = this.props.listOfPosts.map((post,index) =>(
+      <GridPost key={post.data.id} post={post.data}/>
     ))
     return(
       <ol className='gridView'>
@@ -19,7 +19,7 @@ class GridPosts extends Component{
 
 function mapStateToProps(state) {
     return {
-        data:state
+        listOfPosts:state.data
     };
 }
 

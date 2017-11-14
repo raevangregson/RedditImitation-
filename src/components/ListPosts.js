@@ -6,8 +6,8 @@ import ListPost from './ListPost';
 class ListPosts extends Component{
 
   render(){
-    const allPosts = this.props.data.map((post,index) =>(
-      <ListPost key={post.title} post={post}/>
+    const allPosts = this.props.listOfPosts.map((post,index) =>(
+      <ListPost key={post.data.id} post={post.data}/>
     ))
     return(
       <ol>
@@ -19,7 +19,7 @@ class ListPosts extends Component{
 
 function mapStateToProps(state) {
     return {
-        data:state
+        listOfPosts:state.data
     };
 }
 

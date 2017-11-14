@@ -1,7 +1,21 @@
-import data from "../reddit-data.js";
+const INITIAL_STATE = {
+  data:[],
+  isLoading:true
+}
 
-const INITIAL_STATE = data;
-
-export default function(state = INITIAL_STATE) {
-return state;
+export default function(state = INITIAL_STATE, action) {
+switch(action.type){
+  case "REQUEST_CHILDREN":
+            return Object.assign({}, state, {
+                data: [],
+                isLoading: true
+            });
+        case "RECEIVE_CHILDREN":
+            return Object.assign({}, state, {
+                data: action.data,
+                isLoading: false
+            });
+        default:
+            return state;
+    }
 }
